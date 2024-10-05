@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: vproapp-service # service name
+spec:
+  selector:
+    app: vproapp #label of pod
+  ports:
+  - port: 80
+    targetPort: vproapp-port
+    protocol: TCP
+  type: LoadBalancer
